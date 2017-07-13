@@ -1,5 +1,5 @@
 # CSE6990: Software Development and Operations, Group 2
-Created by @serpent999, (A, your name goes here), and @eenblam for @drbyronw.
+Created by @serpent999, @totally85, and @eenblam for @drbyronw.
 
 ## Overview of technologies
 Project requirements are consistent with other groups. Other technical requirements were determined by Group 2.

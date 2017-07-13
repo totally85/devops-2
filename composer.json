@@ -1,0 +1,15 @@
+{
+    "name": "eenblam/devops-2",
+    "description": "Group project for CSE6990 at msstate",
+    "type": "project",
+    "require-dev": {
+        "atoum/atoum": "^3.1"
+    },
+    "authors": [
+        {
+            "name": "eenblam",
+            "email": "ben.a.elam@gmail.com"
+        }
+    ],
+    "require": {}
+}
