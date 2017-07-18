@@ -1,31 +1,28 @@
 <?php
-        $ch = curl_init();
+function call_API($search) {
         $auth_data = file_get_contents("secrets.json", true);
-		$auth_array = json_decode($auth_data, true); 
-		foreach ($auth_array as $key => $value) 
-		{
-			if($key=="moviedb-api-key")
-			{
-				$API_Key=$value;
-			}
-			
-		}
-		
-         
-        curl_setopt($ch, CURLOPT_URL, "https://api.themoviedb.org/3/movie/76341?api_key={$API_Key};");
+	$auth = json_decode($auth_data);
+	$API_Key = $auth->{'moviedb-api-key'};
 
-        
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER,TRUE);
+	//TODO Search to sanitized query string
+	$sanitized_query = $search;
 
-        
+	$query = "https://api.themoviedb.org/3/search/keyword?query={$sanitized_query}&api_key={$API_Key}";
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $query);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+
+	//TODO Is there an error to catch from curl_exec?
         $output = curl_exec($ch);
-        $output = json_decode($output,true);
-		
-        
-		foreach ($output as $key => $value)
-		{
-			echo $key,PHP_EOL;
-		}
-        curl_close($ch);      
+	//TODO Handle bad status
+        $output = json_decode($output);
+	$results = $output->results;
 
+	foreach ($results as $result)
+	{
+		echo $result->id, " ", $result->name, PHP_EOL;
+	}
+        curl_close($ch);
+}
 ?>
