@@ -1,8 +1,11 @@
 <?php
+include("Movie.php");
+
 class CallAPI
 {
 	private $API_Key;
 	private $ch;
+	public $page_ids;
 
 	function __construct($secret_location) {
 		$secrets = file_get_contents($secret_location, true);
@@ -26,16 +29,23 @@ class CallAPI
 		$json_output = json_decode($output);
 		return $json_output;
 	}
-		
-	public function getPageIds($search) {
-		//TODO Search to sanitized query string
-		$sanitized_query = $search;
+	public function sanitizeQuery($query) {
+		//TODO Sanitize query string
+		return $query;
+	}
 
-		$query = "https://api.themoviedb.org/3/search/keyword?query={$sanitized_query}&api_key={$this->API_Key}";
+	public function movieQuery($query) {
+		$clean = $this->sanitizeQuery($query);
+		$query = "https://api.themoviedb.org/3/search/movie?query={$clean}&api_key={$this->API_Key}";
+		return $query;
+	}
+
+	public function getMovies($search) {
+		$query = $this->movieQuery($search);
 		$output = $this->makeRequest($query);
 		$results = $output->results;
 
-		return array_map(function ($x) { return $x->id; }, $results);
+		$this->movies = array_map(function ($x) { return new Movie($x); }, $results);
 	}
 }
 ?>
