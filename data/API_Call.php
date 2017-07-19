@@ -30,10 +30,7 @@ class CallAPI
 		$output = self::makeRequest($query);
 		$results = $output->results;
 
-		foreach ($results as $result)
-		{
-			echo $result->id, " ", $result->name, PHP_EOL;
-		}
+		return array_map(function ($x) { return $x->id; }, $results);
 	}
 }
 ?>
