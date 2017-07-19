@@ -1,11 +1,11 @@
 <?php
 include("Movie.php");
 
-class CallAPI
+class APICall
 {
 	private $API_Key;
 	private $ch;
-	public $page_ids;
+	public $movies;
 
 	function __construct($secret_location) {
 		$secrets = file_get_contents($secret_location, true);
