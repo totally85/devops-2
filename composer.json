@@ -11,5 +11,7 @@
             "email": "ben.a.elam@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "heidilabs/markov-php": "~0.2"
+    }
 }

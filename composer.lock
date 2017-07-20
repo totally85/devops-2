@@ -4,8 +4,46 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "00c6ac469defac8ea192e3fc464795de",
-    "packages": [],
+    "content-hash": "b7b9c7ee88b1c305697ca7a6504b965b",
+    "packages": [
+        {
+            "name": "heidilabs/markov-php",
+            "version": "0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/heidilabs/markov-php.git",
+                "reference": "288d5722b0e333fc1acd77df98c7e085b0acb7ac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/heidilabs/markov-php/zipball/288d5722b0e333fc1acd77df98c7e085b0acb7ac",
+                "reference": "288d5722b0e333fc1acd77df98c7e085b0acb7ac",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Erika Heidi",
+                    "email": "erika@erikaheidi.com"
+                }
+            ],
+            "description": "A simple markov chain experiment",
+            "homepage": "https://github.com/heidilabs/markov-php",
+            "keywords": [
+                "markov"
+            ],
+            "time": "2015-06-04T11:47:54+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "doctrine/instantiator",
