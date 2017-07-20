@@ -45,7 +45,7 @@ class APICall
 		$output = $this->makeRequest($query);
 		$results = $output->results;
 
-		$this->movies = array_map(function ($x) { return new Movie($x); }, $results);
+		$this->movies = array_map(function ($x) { return new Movie($x->title, $x->overview); }, $results);
 	}
 }
 ?>

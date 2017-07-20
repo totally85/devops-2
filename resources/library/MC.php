@@ -1,4 +1,7 @@
 <?php
+require_once(__DIR__ . '/../../vendor/autoload.php');
+include_once("Movie.php");
+
 class MC
 {
 	function __construct($title_corpus, $overview_corpus, $k) {
@@ -21,11 +24,14 @@ class MC
 	public function generateMovie() {
 		$m = rand(1, 8);
 		$n = rand(20, 40);
-		return Movie($this->generateTitle($m), $this->generateOverview($n));
+		return new Movie($this->generateTitle($m), $this->generateOverview($n));
 	}
 
 	public function generateMovies($n) {
-		return array_fill(0, $n, $this->generateMovie());
+		for ($i = 0; $i <= $n; $i++) {
+			$a[] = $this->generateMovie();
+		}
+		return $a;
 	}
 }
 ?>
