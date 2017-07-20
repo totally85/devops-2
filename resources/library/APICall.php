@@ -1,5 +1,5 @@
 <?php
-include("Movie.php");
+include_once("Movie.php");
 
 class APICall
 {
@@ -46,6 +46,18 @@ class APICall
 		$results = $output->results;
 
 		$this->movies = array_map(function ($x) { return new Movie($x->title, $x->overview); }, $results);
+		$this->createTitleCorpus();
+		$this->createOverviewCorpus();
+	}
+
+	private function createTitleCorpus() {
+		$titles = array_map(function ($x) { return $x->title; }, $this->movies);
+		$this->title_corpus = implode(" ", $titles);
+	}
+
+	private function createOverviewCorpus() {
+		$overviews = array_map(function ($x) { return $x->overview; }, $this->movies);
+		$this->overview_corpus = implode(" ", $overviews);
 	}
 }
 ?>
