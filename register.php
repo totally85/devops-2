@@ -93,7 +93,7 @@
         <!--Placeholder for error messages-->
         </p>
         
-        <form method="post" action="main.php">
+        <form method="post" action="register.php">
             <label>Username: </label>
             <input type="text" name="username" value="<?php if (isset($_POST['username'])) echo $_POST['username']; ?>"> <br>
             <label>Password: </label>
