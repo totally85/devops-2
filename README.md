@@ -1,5 +1,6 @@
 # CSE6990: Software Development and Operations, Group 2
 [![Build Status](https://travis-ci.org/eenblam/devops-2.svg?branch=master)](https://travis-ci.org/eenblam/devops-2)
+[![Coverage Status](https://coveralls.io/repos/github/eenblam/devops-2/badge.svg?branch=master)](https://coveralls.io/github/eenblam/devops-2?branch=master)
 
 Created by @serpent999, @totally85, and @eenblam for @drbyronw.
 
