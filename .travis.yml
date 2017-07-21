@@ -14,3 +14,5 @@ before_install:
   -in credentials.tar.gz.enc -out credentials.tar.gz -d
 - tar -xzf credentials.tar.gz
 install: composer install
+script: vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+after_success: travis_retry php vendor/bin/coveralls -v
