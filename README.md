@@ -1,7 +1,18 @@
 # CSE6990: Software Development and Operations, Group 2
 [![Build Status](https://travis-ci.org/eenblam/devops-2.svg?branch=master)](https://travis-ci.org/eenblam/devops-2)
+[![Coverage Status](https://coveralls.io/repos/github/eenblam/devops-2/badge.svg?branch=master)](https://coveralls.io/github/eenblam/devops-2?branch=master)
 
 Created by @serpent999, @totally85, and @eenblam for @drbyronw.
+
+## Building and Testing
+Currently, builds will be kicked off on Travis by any pushes directly to the repo
+as well as any pull requests, regardless of branch.
+
+Successful builds on Travis will be deployed to Google App Engine, if and only if they succeed.
+
+TODO:
+- Coveralls
+- Notes on testing locally using `gcloud`
 
 ## Overview of technologies
 Project requirements are consistent with other groups. Other technical requirements were determined by Group 2.

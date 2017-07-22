@@ -3,5 +3,7 @@ runtime: php55
 
 handlers:
 #Serve php scripts
+- url: /register
+  script: public_html/register.php
 - url: /.*
-  script: main.php
+  script: public_html/login.php

@@ -3,7 +3,8 @@
     "description": "Group project for CSE6990 at msstate",
     "type": "project",
     "require-dev": {
-        "atoum/atoum": "^3.1"
+        "phpunit/phpunit": "^5.7",
+        "satooshi/php-coveralls": "^1.0"
     },
     "authors": [
         {
@@ -11,5 +12,7 @@
             "email": "ben.a.elam@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "heidilabs/markov-php": "~0.2"
+    }
 }
