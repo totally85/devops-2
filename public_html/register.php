@@ -13,9 +13,8 @@
         <?php
 		include_once('resources/library/MySQLConnection.php');
                 $conn = new MySQLConnection();
-                $db = $conn->db;
 		session_start();
-		
+
 		//If the POST var "register" exists (our submit button), then we can assume that the user has submitted the registration form.
 		//RETRIEVE FIELD VALUES FROM REGISTRATION FORM
 		if(isset($_POST['register'])) {
@@ -28,12 +27,12 @@
 				die("Required field empty");
 			}
 
-			if $db->userExists($username) {
+			if ($conn->userExists($username)) {
 				die("That username already exists!");
 			}
 
 			//If the signup process is successful.
-			if ($db->addUser($username, $pass)) {
+			if ($conn->addUser($username, $pass)) {
 				echo 'Thank you for registering with our website.';
 			}
 			else {
@@ -49,7 +48,7 @@
         <!--Placeholder for error messages-->
         </p>
 
-        <form method="post" action="register.php">
+        <form method="post" action="register">
             <label>Username: </label>
             <input type="text" name="username" value="<?php if (isset($_POST['username'])) echo $_POST['username']; ?>"> <br>
             <label>Password: </label>
