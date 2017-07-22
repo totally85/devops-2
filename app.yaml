@@ -6,4 +6,4 @@ handlers:
 - url: /register
   script: public_html/register.php
 - url: /.*
-  script: public_html/main.php
+  script: public_html/login.php
