@@ -5,5 +5,9 @@ handlers:
 #Serve php scripts
 - url: /register
   script: public_html/register.php
+ - url: /login
+   script: public_html/login.php
+- url: /main
+   script: public_html/main.php
 - url: /.*
   script: public_html/login.php
